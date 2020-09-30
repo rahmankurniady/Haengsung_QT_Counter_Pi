@@ -8,6 +8,7 @@
 #include <QtSql/QtSql>
 #include <QtSql/QSqlQuery>
 #include "wiringPi.h"
+#include <QTcpSocket>
 
 namespace Ui {
 class MainWindow;
@@ -34,23 +35,30 @@ public slots:
     void processRead();
     void load_Configuration();
 
+    void init_Counter();
     void Count_Up(QString value);
-
+    void Update_Counter();
+    void Update_Table_Counter();
 
     void init_db();
     void init_devicelist();
+
+    void Read_Clock();
 
     int check_device_list_exist(QString RFAddress);
     int check_Memory(QString RFAddress, QString Button);
     void insert_table_memory(QString RFAddress, QString Button);
     void update_table_memory(int i, QString button);
     void Proses_panggilan(QString RFAddress, QString ButtonID);
-    void Panggil();
+    void Panggil(QString RFAddress, QString ButtonID, QString MC_ID, QString Pos_ID);
 
 private slots:
     void on_btn_save_clicked();
 
     void on_btn_clear_clicked();
+
+    void keyPressEvent(QKeyEvent * event);
+
 
 private:
     Ui::MainWindow *ui;
@@ -58,6 +66,7 @@ private:
     QSerialPort *serial;
     QTimer *timer_Serial;
     QSqlDatabase db;
+    QTcpSocket *socket;
 };
 
 #endif // MAINWINDOW_H

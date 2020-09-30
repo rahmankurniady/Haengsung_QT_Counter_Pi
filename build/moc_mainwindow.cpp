@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[26];
-    char stringdata0[339];
+    QByteArrayData data[35];
+    char stringdata0[443];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -38,35 +38,48 @@ QT_MOC_LITERAL(5, 70, 5), // "error"
 QT_MOC_LITERAL(6, 76, 14), // "checkAvailable"
 QT_MOC_LITERAL(7, 91, 11), // "processRead"
 QT_MOC_LITERAL(8, 103, 18), // "load_Configuration"
-QT_MOC_LITERAL(9, 122, 8), // "Count_Up"
-QT_MOC_LITERAL(10, 131, 5), // "value"
-QT_MOC_LITERAL(11, 137, 7), // "init_db"
-QT_MOC_LITERAL(12, 145, 15), // "init_devicelist"
-QT_MOC_LITERAL(13, 161, 23), // "check_device_list_exist"
-QT_MOC_LITERAL(14, 185, 9), // "RFAddress"
-QT_MOC_LITERAL(15, 195, 12), // "check_Memory"
-QT_MOC_LITERAL(16, 208, 6), // "Button"
-QT_MOC_LITERAL(17, 215, 19), // "insert_table_memory"
-QT_MOC_LITERAL(18, 235, 19), // "update_table_memory"
-QT_MOC_LITERAL(19, 255, 1), // "i"
-QT_MOC_LITERAL(20, 257, 6), // "button"
-QT_MOC_LITERAL(21, 264, 16), // "Proses_panggilan"
-QT_MOC_LITERAL(22, 281, 8), // "ButtonID"
-QT_MOC_LITERAL(23, 290, 7), // "Panggil"
-QT_MOC_LITERAL(24, 298, 19), // "on_btn_save_clicked"
-QT_MOC_LITERAL(25, 318, 20) // "on_btn_clear_clicked"
+QT_MOC_LITERAL(9, 122, 12), // "init_Counter"
+QT_MOC_LITERAL(10, 135, 8), // "Count_Up"
+QT_MOC_LITERAL(11, 144, 5), // "value"
+QT_MOC_LITERAL(12, 150, 14), // "Update_Counter"
+QT_MOC_LITERAL(13, 165, 20), // "Update_Table_Counter"
+QT_MOC_LITERAL(14, 186, 7), // "init_db"
+QT_MOC_LITERAL(15, 194, 15), // "init_devicelist"
+QT_MOC_LITERAL(16, 210, 10), // "Read_Clock"
+QT_MOC_LITERAL(17, 221, 23), // "check_device_list_exist"
+QT_MOC_LITERAL(18, 245, 9), // "RFAddress"
+QT_MOC_LITERAL(19, 255, 12), // "check_Memory"
+QT_MOC_LITERAL(20, 268, 6), // "Button"
+QT_MOC_LITERAL(21, 275, 19), // "insert_table_memory"
+QT_MOC_LITERAL(22, 295, 19), // "update_table_memory"
+QT_MOC_LITERAL(23, 315, 1), // "i"
+QT_MOC_LITERAL(24, 317, 6), // "button"
+QT_MOC_LITERAL(25, 324, 16), // "Proses_panggilan"
+QT_MOC_LITERAL(26, 341, 8), // "ButtonID"
+QT_MOC_LITERAL(27, 350, 7), // "Panggil"
+QT_MOC_LITERAL(28, 358, 5), // "MC_ID"
+QT_MOC_LITERAL(29, 364, 6), // "Pos_ID"
+QT_MOC_LITERAL(30, 371, 19), // "on_btn_save_clicked"
+QT_MOC_LITERAL(31, 391, 20), // "on_btn_clear_clicked"
+QT_MOC_LITERAL(32, 412, 13), // "keyPressEvent"
+QT_MOC_LITERAL(33, 426, 10), // "QKeyEvent*"
+QT_MOC_LITERAL(34, 437, 5) // "event"
 
     },
     "MainWindow\0init_serial\0\0disconnected_COM\0"
     "QSerialPort::SerialPortError\0error\0"
     "checkAvailable\0processRead\0"
-    "load_Configuration\0Count_Up\0value\0"
-    "init_db\0init_devicelist\0check_device_list_exist\0"
-    "RFAddress\0check_Memory\0Button\0"
-    "insert_table_memory\0update_table_memory\0"
-    "i\0button\0Proses_panggilan\0ButtonID\0"
-    "Panggil\0on_btn_save_clicked\0"
-    "on_btn_clear_clicked"
+    "load_Configuration\0init_Counter\0"
+    "Count_Up\0value\0Update_Counter\0"
+    "Update_Table_Counter\0init_db\0"
+    "init_devicelist\0Read_Clock\0"
+    "check_device_list_exist\0RFAddress\0"
+    "check_Memory\0Button\0insert_table_memory\0"
+    "update_table_memory\0i\0button\0"
+    "Proses_panggilan\0ButtonID\0Panggil\0"
+    "MC_ID\0Pos_ID\0on_btn_save_clicked\0"
+    "on_btn_clear_clicked\0keyPressEvent\0"
+    "QKeyEvent*\0event"
 };
 #undef QT_MOC_LITERAL
 
@@ -76,7 +89,7 @@ static const uint qt_meta_data_MainWindow[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      16,   14, // methods
+      21,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -84,22 +97,27 @@ static const uint qt_meta_data_MainWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   94,    2, 0x0a /* Public */,
-       3,    1,   95,    2, 0x0a /* Public */,
-       6,    0,   98,    2, 0x0a /* Public */,
-       7,    0,   99,    2, 0x0a /* Public */,
-       8,    0,  100,    2, 0x0a /* Public */,
-       9,    1,  101,    2, 0x0a /* Public */,
-      11,    0,  104,    2, 0x0a /* Public */,
-      12,    0,  105,    2, 0x0a /* Public */,
-      13,    1,  106,    2, 0x0a /* Public */,
-      15,    2,  109,    2, 0x0a /* Public */,
-      17,    2,  114,    2, 0x0a /* Public */,
-      18,    2,  119,    2, 0x0a /* Public */,
-      21,    2,  124,    2, 0x0a /* Public */,
-      23,    0,  129,    2, 0x0a /* Public */,
-      24,    0,  130,    2, 0x08 /* Private */,
-      25,    0,  131,    2, 0x08 /* Private */,
+       1,    0,  119,    2, 0x0a /* Public */,
+       3,    1,  120,    2, 0x0a /* Public */,
+       6,    0,  123,    2, 0x0a /* Public */,
+       7,    0,  124,    2, 0x0a /* Public */,
+       8,    0,  125,    2, 0x0a /* Public */,
+       9,    0,  126,    2, 0x0a /* Public */,
+      10,    1,  127,    2, 0x0a /* Public */,
+      12,    0,  130,    2, 0x0a /* Public */,
+      13,    0,  131,    2, 0x0a /* Public */,
+      14,    0,  132,    2, 0x0a /* Public */,
+      15,    0,  133,    2, 0x0a /* Public */,
+      16,    0,  134,    2, 0x0a /* Public */,
+      17,    1,  135,    2, 0x0a /* Public */,
+      19,    2,  138,    2, 0x0a /* Public */,
+      21,    2,  143,    2, 0x0a /* Public */,
+      22,    2,  148,    2, 0x0a /* Public */,
+      25,    2,  153,    2, 0x0a /* Public */,
+      27,    4,  158,    2, 0x0a /* Public */,
+      30,    0,  167,    2, 0x08 /* Private */,
+      31,    0,  168,    2, 0x08 /* Private */,
+      32,    1,  169,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -107,17 +125,22 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QString,   10,
     QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Int, QMetaType::QString,   14,
-    QMetaType::Int, QMetaType::QString, QMetaType::QString,   14,   16,
-    QMetaType::Void, QMetaType::QString, QMetaType::QString,   14,   16,
-    QMetaType::Void, QMetaType::Int, QMetaType::QString,   19,   20,
-    QMetaType::Void, QMetaType::QString, QMetaType::QString,   14,   22,
+    QMetaType::Void, QMetaType::QString,   11,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Int, QMetaType::QString,   18,
+    QMetaType::Int, QMetaType::QString, QMetaType::QString,   18,   20,
+    QMetaType::Void, QMetaType::QString, QMetaType::QString,   18,   20,
+    QMetaType::Void, QMetaType::Int, QMetaType::QString,   23,   24,
+    QMetaType::Void, QMetaType::QString, QMetaType::QString,   18,   26,
+    QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString,   18,   26,   28,   29,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 33,   34,
 
        0        // eod
 };
@@ -133,19 +156,24 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 2: _t->checkAvailable(); break;
         case 3: _t->processRead(); break;
         case 4: _t->load_Configuration(); break;
-        case 5: _t->Count_Up((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 6: _t->init_db(); break;
-        case 7: _t->init_devicelist(); break;
-        case 8: { int _r = _t->check_device_list_exist((*reinterpret_cast< QString(*)>(_a[1])));
+        case 5: _t->init_Counter(); break;
+        case 6: _t->Count_Up((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 7: _t->Update_Counter(); break;
+        case 8: _t->Update_Table_Counter(); break;
+        case 9: _t->init_db(); break;
+        case 10: _t->init_devicelist(); break;
+        case 11: _t->Read_Clock(); break;
+        case 12: { int _r = _t->check_device_list_exist((*reinterpret_cast< QString(*)>(_a[1])));
             if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
-        case 9: { int _r = _t->check_Memory((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2])));
+        case 13: { int _r = _t->check_Memory((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2])));
             if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
-        case 10: _t->insert_table_memory((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2]))); break;
-        case 11: _t->update_table_memory((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2]))); break;
-        case 12: _t->Proses_panggilan((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2]))); break;
-        case 13: _t->Panggil(); break;
-        case 14: _t->on_btn_save_clicked(); break;
-        case 15: _t->on_btn_clear_clicked(); break;
+        case 14: _t->insert_table_memory((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2]))); break;
+        case 15: _t->update_table_memory((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2]))); break;
+        case 16: _t->Proses_panggilan((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2]))); break;
+        case 17: _t->Panggil((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2])),(*reinterpret_cast< QString(*)>(_a[3])),(*reinterpret_cast< QString(*)>(_a[4]))); break;
+        case 18: _t->on_btn_save_clicked(); break;
+        case 19: _t->on_btn_clear_clicked(); break;
+        case 20: _t->keyPressEvent((*reinterpret_cast< QKeyEvent*(*)>(_a[1]))); break;
         default: ;
         }
     }
@@ -176,13 +204,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 16)
+        if (_id < 21)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 16;
+        _id -= 21;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 16)
+        if (_id < 21)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 16;
+        _id -= 21;
     }
     return _id;
 }

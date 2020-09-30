@@ -19,7 +19,7 @@ Console::Console(QWidget *parent)
 void Console::putData(const QByteArray &data)
 {
 
-       insertPlainText(QString(data));
+    insertPlainText(QString(data));
     QScrollBar *bar = verticalScrollBar();
     bar->setValue(bar->maximum());
 }

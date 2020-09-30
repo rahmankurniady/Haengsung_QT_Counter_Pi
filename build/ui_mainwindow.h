@@ -22,6 +22,7 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
+#include <QtWidgets/QSpinBox>
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QTableWidget>
@@ -49,8 +50,10 @@ public:
     QHBoxLayout *horizontalLayout_5;
     QLabel *label_9;
     QLabel *lbl_counter_In;
+    QLabel *label_19;
+    QLabel *lbl_counter_table;
     QLabel *label_15;
-    QLabel *label_16;
+    QLabel *lbl_counter_out;
     QHBoxLayout *horizontalLayout_4;
     QLabel *label_10;
     QLabel *label_11;
@@ -80,21 +83,25 @@ public:
     QFormLayout *formLayout_2;
     QLabel *lbl_IP_TCP;
     QLineEdit *line_IP_TCP;
-    QLineEdit *line_Port_TCP;
     QLabel *lbl_Port_TCP;
+    QLineEdit *line_Port_TCP;
     QGroupBox *groupBox_3;
     QFormLayout *formLayout_4;
     QLabel *label_6;
     QLineEdit *line_ID_Group;
     QLineEdit *line_ID_MC;
     QLabel *label_3;
+    QGroupBox *groupBox_4;
+    QFormLayout *formLayout_5;
+    QLabel *label_12;
+    QSpinBox *spin_debounce;
     QPushButton *btn_save;
     QWidget *tab_3;
     QVBoxLayout *verticalLayout_4;
     QTableWidget *table_button_memory;
     QHBoxLayout *horizontalLayout;
     QLabel *label_4;
-    QLabel *label_5;
+    QLabel *lbl_stat_tcp;
     QSpacerItem *horizontalSpacer;
     QLabel *label_2;
     QLabel *lbl_stat_db;
@@ -103,7 +110,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(535, 472);
+        MainWindow->resize(621, 472);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         verticalLayout = new QVBoxLayout(centralWidget);
@@ -175,16 +182,27 @@ public:
 
         horizontalLayout_5->addWidget(lbl_counter_In);
 
+        label_19 = new QLabel(tab_4);
+        label_19->setObjectName(QStringLiteral("label_19"));
+
+        horizontalLayout_5->addWidget(label_19);
+
+        lbl_counter_table = new QLabel(tab_4);
+        lbl_counter_table->setObjectName(QStringLiteral("lbl_counter_table"));
+        lbl_counter_table->setAlignment(Qt::AlignCenter);
+
+        horizontalLayout_5->addWidget(lbl_counter_table);
+
         label_15 = new QLabel(tab_4);
         label_15->setObjectName(QStringLiteral("label_15"));
 
         horizontalLayout_5->addWidget(label_15);
 
-        label_16 = new QLabel(tab_4);
-        label_16->setObjectName(QStringLiteral("label_16"));
-        label_16->setAlignment(Qt::AlignCenter);
+        lbl_counter_out = new QLabel(tab_4);
+        lbl_counter_out->setObjectName(QStringLiteral("lbl_counter_out"));
+        lbl_counter_out->setAlignment(Qt::AlignCenter);
 
-        horizontalLayout_5->addWidget(label_16);
+        horizontalLayout_5->addWidget(lbl_counter_out);
 
 
         verticalLayout_5->addLayout(horizontalLayout_5);
@@ -242,14 +260,18 @@ public:
         verticalLayout_2->setContentsMargins(11, 11, 11, 11);
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
         table_device_list = new QTableWidget(tab);
-        if (table_device_list->columnCount() < 3)
-            table_device_list->setColumnCount(3);
+        if (table_device_list->columnCount() < 5)
+            table_device_list->setColumnCount(5);
         QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
         table_device_list->setHorizontalHeaderItem(0, __qtablewidgetitem);
         QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
         table_device_list->setHorizontalHeaderItem(1, __qtablewidgetitem1);
         QTableWidgetItem *__qtablewidgetitem2 = new QTableWidgetItem();
         table_device_list->setHorizontalHeaderItem(2, __qtablewidgetitem2);
+        QTableWidgetItem *__qtablewidgetitem3 = new QTableWidgetItem();
+        table_device_list->setHorizontalHeaderItem(3, __qtablewidgetitem3);
+        QTableWidgetItem *__qtablewidgetitem4 = new QTableWidgetItem();
+        table_device_list->setHorizontalHeaderItem(4, __qtablewidgetitem4);
         table_device_list->setObjectName(QStringLiteral("table_device_list"));
         table_device_list->horizontalHeader()->setStretchLastSection(true);
         table_device_list->verticalHeader()->setStretchLastSection(false);
@@ -331,15 +353,15 @@ public:
 
         formLayout_2->setWidget(0, QFormLayout::FieldRole, line_IP_TCP);
 
-        line_Port_TCP = new QLineEdit(groupBox_2);
-        line_Port_TCP->setObjectName(QStringLiteral("line_Port_TCP"));
-
-        formLayout_2->setWidget(1, QFormLayout::FieldRole, line_Port_TCP);
-
         lbl_Port_TCP = new QLabel(groupBox_2);
         lbl_Port_TCP->setObjectName(QStringLiteral("lbl_Port_TCP"));
 
         formLayout_2->setWidget(1, QFormLayout::LabelRole, lbl_Port_TCP);
+
+        line_Port_TCP = new QLineEdit(groupBox_2);
+        line_Port_TCP->setObjectName(QStringLiteral("line_Port_TCP"));
+
+        formLayout_2->setWidget(1, QFormLayout::FieldRole, line_Port_TCP);
 
 
         formLayout_3->setWidget(0, QFormLayout::FieldRole, groupBox_2);
@@ -373,6 +395,26 @@ public:
 
         formLayout_3->setWidget(1, QFormLayout::LabelRole, groupBox_3);
 
+        groupBox_4 = new QGroupBox(tab_2);
+        groupBox_4->setObjectName(QStringLiteral("groupBox_4"));
+        formLayout_5 = new QFormLayout(groupBox_4);
+        formLayout_5->setSpacing(6);
+        formLayout_5->setContentsMargins(11, 11, 11, 11);
+        formLayout_5->setObjectName(QStringLiteral("formLayout_5"));
+        label_12 = new QLabel(groupBox_4);
+        label_12->setObjectName(QStringLiteral("label_12"));
+
+        formLayout_5->setWidget(0, QFormLayout::LabelRole, label_12);
+
+        spin_debounce = new QSpinBox(groupBox_4);
+        spin_debounce->setObjectName(QStringLiteral("spin_debounce"));
+        spin_debounce->setMaximum(9999999);
+
+        formLayout_5->setWidget(0, QFormLayout::FieldRole, spin_debounce);
+
+
+        formLayout_3->setWidget(1, QFormLayout::FieldRole, groupBox_4);
+
 
         verticalLayout_3->addLayout(formLayout_3);
 
@@ -391,12 +433,12 @@ public:
         table_button_memory = new QTableWidget(tab_3);
         if (table_button_memory->columnCount() < 3)
             table_button_memory->setColumnCount(3);
-        QTableWidgetItem *__qtablewidgetitem3 = new QTableWidgetItem();
-        table_button_memory->setHorizontalHeaderItem(0, __qtablewidgetitem3);
-        QTableWidgetItem *__qtablewidgetitem4 = new QTableWidgetItem();
-        table_button_memory->setHorizontalHeaderItem(1, __qtablewidgetitem4);
         QTableWidgetItem *__qtablewidgetitem5 = new QTableWidgetItem();
-        table_button_memory->setHorizontalHeaderItem(2, __qtablewidgetitem5);
+        table_button_memory->setHorizontalHeaderItem(0, __qtablewidgetitem5);
+        QTableWidgetItem *__qtablewidgetitem6 = new QTableWidgetItem();
+        table_button_memory->setHorizontalHeaderItem(1, __qtablewidgetitem6);
+        QTableWidgetItem *__qtablewidgetitem7 = new QTableWidgetItem();
+        table_button_memory->setHorizontalHeaderItem(2, __qtablewidgetitem7);
         table_button_memory->setObjectName(QStringLiteral("table_button_memory"));
         table_button_memory->horizontalHeader()->setStretchLastSection(true);
 
@@ -414,10 +456,10 @@ public:
 
         horizontalLayout->addWidget(label_4);
 
-        label_5 = new QLabel(centralWidget);
-        label_5->setObjectName(QStringLiteral("label_5"));
+        lbl_stat_tcp = new QLabel(centralWidget);
+        lbl_stat_tcp->setObjectName(QStringLiteral("lbl_stat_tcp"));
 
-        horizontalLayout->addWidget(label_5);
+        horizontalLayout->addWidget(lbl_stat_tcp);
 
         horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
@@ -454,10 +496,12 @@ public:
         label_14->setText(QApplication::translate("MainWindow", "0", Q_NULLPTR));
         label_8->setText(QApplication::translate("MainWindow", "Target", Q_NULLPTR));
         label_13->setText(QApplication::translate("MainWindow", "0", Q_NULLPTR));
-        label_9->setText(QApplication::translate("MainWindow", "Counter In", Q_NULLPTR));
+        label_9->setText(QApplication::translate("MainWindow", "Counter In :", Q_NULLPTR));
         lbl_counter_In->setText(QApplication::translate("MainWindow", "0", Q_NULLPTR));
-        label_15->setText(QApplication::translate("MainWindow", "Counter Out", Q_NULLPTR));
-        label_16->setText(QApplication::translate("MainWindow", "0", Q_NULLPTR));
+        label_19->setText(QApplication::translate("MainWindow", "Table :", Q_NULLPTR));
+        lbl_counter_table->setText(QApplication::translate("MainWindow", "0", Q_NULLPTR));
+        label_15->setText(QApplication::translate("MainWindow", "Counter Out :", Q_NULLPTR));
+        lbl_counter_out->setText(QApplication::translate("MainWindow", "0", Q_NULLPTR));
         label_10->setText(QApplication::translate("MainWindow", "Stat Counter In", Q_NULLPTR));
         label_11->setText(QApplication::translate("MainWindow", "Enabled", Q_NULLPTR));
         label_17->setText(QApplication::translate("MainWindow", "Stat Counter Out", Q_NULLPTR));
@@ -470,6 +514,10 @@ public:
         ___qtablewidgetitem1->setText(QApplication::translate("MainWindow", "Group ID", Q_NULLPTR));
         QTableWidgetItem *___qtablewidgetitem2 = table_device_list->horizontalHeaderItem(2);
         ___qtablewidgetitem2->setText(QApplication::translate("MainWindow", "Device ID", Q_NULLPTR));
+        QTableWidgetItem *___qtablewidgetitem3 = table_device_list->horizontalHeaderItem(3);
+        ___qtablewidgetitem3->setText(QApplication::translate("MainWindow", "MC_ID", Q_NULLPTR));
+        QTableWidgetItem *___qtablewidgetitem4 = table_device_list->horizontalHeaderItem(4);
+        ___qtablewidgetitem4->setText(QApplication::translate("MainWindow", "Pos_ID", Q_NULLPTR));
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("MainWindow", "DeviceList", Q_NULLPTR));
         groupBox->setTitle(QApplication::translate("MainWindow", "Database", Q_NULLPTR));
         lbl_IP_DB->setText(QApplication::translate("MainWindow", "IP", Q_NULLPTR));
@@ -482,17 +530,19 @@ public:
         groupBox_3->setTitle(QApplication::translate("MainWindow", "Gateway Setting", Q_NULLPTR));
         label_6->setText(QApplication::translate("MainWindow", "ID Group   ", Q_NULLPTR));
         label_3->setText(QApplication::translate("MainWindow", "ID MC", Q_NULLPTR));
+        groupBox_4->setTitle(QApplication::translate("MainWindow", "Counter Setting", Q_NULLPTR));
+        label_12->setText(QApplication::translate("MainWindow", "Debounce", Q_NULLPTR));
         btn_save->setText(QApplication::translate("MainWindow", "Save", Q_NULLPTR));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("MainWindow", "Settings", Q_NULLPTR));
-        QTableWidgetItem *___qtablewidgetitem3 = table_button_memory->horizontalHeaderItem(0);
-        ___qtablewidgetitem3->setText(QApplication::translate("MainWindow", "RF Address", Q_NULLPTR));
-        QTableWidgetItem *___qtablewidgetitem4 = table_button_memory->horizontalHeaderItem(1);
-        ___qtablewidgetitem4->setText(QApplication::translate("MainWindow", "Last ID", Q_NULLPTR));
-        QTableWidgetItem *___qtablewidgetitem5 = table_button_memory->horizontalHeaderItem(2);
-        ___qtablewidgetitem5->setText(QApplication::translate("MainWindow", "Time Last", Q_NULLPTR));
+        QTableWidgetItem *___qtablewidgetitem5 = table_button_memory->horizontalHeaderItem(0);
+        ___qtablewidgetitem5->setText(QApplication::translate("MainWindow", "RF Address", Q_NULLPTR));
+        QTableWidgetItem *___qtablewidgetitem6 = table_button_memory->horizontalHeaderItem(1);
+        ___qtablewidgetitem6->setText(QApplication::translate("MainWindow", "Last ID", Q_NULLPTR));
+        QTableWidgetItem *___qtablewidgetitem7 = table_button_memory->horizontalHeaderItem(2);
+        ___qtablewidgetitem7->setText(QApplication::translate("MainWindow", "Time Last", Q_NULLPTR));
         tabWidget->setTabText(tabWidget->indexOf(tab_3), QApplication::translate("MainWindow", "Last Memory", Q_NULLPTR));
         label_4->setText(QApplication::translate("MainWindow", "TCP :", Q_NULLPTR));
-        label_5->setText(QApplication::translate("MainWindow", "Disconnected", Q_NULLPTR));
+        lbl_stat_tcp->setText(QApplication::translate("MainWindow", "Disconnected", Q_NULLPTR));
         label_2->setText(QApplication::translate("MainWindow", "Database :", Q_NULLPTR));
         lbl_stat_db->setText(QApplication::translate("MainWindow", "Disconnected", Q_NULLPTR));
     } // retranslateUi

@@ -8,10 +8,10 @@ class ReadGpio : public QObject
     Q_OBJECT
 public:
     explicit ReadGpio(QObject *parent = 0);
-    double keytimerIn;
+    double keytimerIn_1,keytimerIn_2,keytimerIn_3;
     double debouncetimer;
-    unsigned int inputIn;
-    unsigned int input_compare;
+    unsigned int inputIn_1,inputIn_2,inputIn_3;
+    unsigned int input_compare_1,input_compare_2,input_compare_3;
 
 signals:
     void Signal_In(const QString &value);
